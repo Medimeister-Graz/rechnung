@@ -9,16 +9,16 @@ const Footer = (): JSX.Element => (
       marginTop: '50px',
     }}
   >
-    Originalt av og for <strong>Abakus</strong> | Adoptert av <strong>NTNUI</strong> |{' '}
+    Original von und für <strong>Abakus</strong> | Adoptiert von <strong>Medimeister Graz</strong> |{' '}
     <a
       style={{
         textDecoration: 'none',
         color: '#BC1818',
       }}
-      href="https://github.com/NTNUI/skjema"
+      href="https://github.com/Medimeister-Graz/rechnung"
       target="blank"
     >
-      Bidra her
+      Unterstütze uns auf GitHub
     </a>
   </div>
 );

@@ -55,7 +55,7 @@ const PictureUpload = ({ updateForm }: Props): JSX.Element => {
             }}
           />
           <div className={styles.fileLabel}>
-            <div>Last opp vedlegg</div>
+            <div>Anhänge hochladen</div>
           </div>
         </label>
       </div>

@@ -66,32 +66,32 @@ const Form = (): JSX.Element => {
         Refusjonsskjema
       </Typography>
       <Input
-        name="Navn"
+        name="Name"
         value={name}
         required
         updateForm={setName}
-        helperText="Ditt fulle navn"
+        helperText="Dein vollständiger Name"
       />
       <Input
-        name="Din e-post"
+        name="Deine E-Mail-Adresse"
         value={mailfrom}
         required
         updateForm={setMailfrom}
-        helperText="Din kopi av skjema går hit"
+        helperText="Deine Kopie der Rechnung wird an diese E-Mail-Adresse gesendet"
       />
       <Input
-        name="Gruppe/utvalg"
+        name="Referat"
         value={committee}
         required
         updateForm={setCommittee}
-        helperText={'Som utgiften skal betales av'}
+        helperText={'Das Referat, für das eingekauft wurde'}
       />
       <Input
-        name="Din kasserers e-post"
+        name="Mailadresse des Kassierers"
         value={mailto}
         required
         updateForm={setMailto}
-        helperText="Ofte 'gruppe-kasserer@ntnui.no'"
+        helperText="kassierer@medimeistergraz.org'"
       />
       <Input
         name="Kontonummer"
@@ -99,31 +99,31 @@ const Form = (): JSX.Element => {
         required
         type="number"
         updateForm={setAccountNumber}
-        helperText="Refusjon overføres til denne kontoen"
+        helperText="Das Konto an das die Erstattung überwiesen werden soll"
       />
       <Input
-        name="Beløp"
+        name="Betrag"
         value={amount}
         required
         type="number"
         updateForm={setAmount}
-        adornment={'kr'}
-        helperText="Beløpet du ønsker refundert"
+        adornment={'€'}
+        helperText="Betrag den du erstattet haben möchtest"
       />
       <Input
-        name="Kjøpsdato"
+        name="Einkaufsdatum"
         value={date}
         required
         type="date"
         updateForm={setDate}
-        helperText="Samme som på kvitteringen"
+        helperText="Muss mit der Quittung übereinstimmen"
       />
       <Input
-        name="Anledning/arrangement"
+        name="Grund des Einkaufs"
         required
         value={occasion}
         updateForm={setOccasion}
-        helperText="Som utgiften er knyttet til"
+        helperText="Wofür wurde eingekauft?"
       />
       <Input
         name="Kommentar"
@@ -132,7 +132,7 @@ const Form = (): JSX.Element => {
         required
         value={comment}
         updateForm={setComment}
-        helperText="Beskriv utgiften"
+        helperText="Beschreib die Ausgaben genauer oder ergänze weitere Informationen"
       />
       <SignatureUpload updateForm={setSignature} setSignature={setSignature} />
       <PictureUpload updateForm={setImages} />
@@ -176,7 +176,7 @@ const Form = (): JSX.Element => {
         }}
       >
         <ReceiptIcon style={{ marginRight: '10px' }} />
-        <Typography variant="h6">Generer bilag</Typography>
+        <Typography variant="h6">Generiere Rechnung</Typography>
       </Button>
     </Paper>
   );

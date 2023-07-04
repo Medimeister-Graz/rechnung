@@ -39,7 +39,7 @@ const SignatureUpload = ({ updateForm, setSignature }: Props): JSX.Element => {
           {hasUploaded ? (
             <div className={styles.uploadedElement}>Signatur lastet opp</div>
           ) : (
-            <span>Last opp signatur</span>
+            <span>Unterschrift hochladen</span>
           )}
         </div>
       </label>
@@ -49,7 +49,7 @@ const SignatureUpload = ({ updateForm, setSignature }: Props): JSX.Element => {
         onClick={() => setIsOpen(true)}
       >
         <div>
-          <p style={{ fontSize: '10px', margin: 0 }}>Eller tegn</p>
+          <p style={{ fontSize: '10px', margin: 0 }}>oder Unterschreiben</p>
           <GestureIcon />
           <CreateIcon />
         </div>
