@@ -1,8 +1,8 @@
-# Refusjonsskjema NTNUI
+# Erstattungsformular Medimeister Graz
 
 Based on [webkom/kvittering](https://github.com/webkom/kvittering), configured to run as a normal docker container.
 
-Handles refund requests for [NTNUI](https://ntnui.no).
+Handles refund requests for [mmgraz](https://medimeistergraz.org).
 
 ## Development
 
