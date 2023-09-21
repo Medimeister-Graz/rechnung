@@ -9,7 +9,8 @@ const Footer = (): JSX.Element => (
       marginTop: '50px',
     }}
   >
-    Original von und für <strong>Abakus</strong> | Adoptiert von <strong>Medimeister Graz</strong> |{' '}
+    Original von und für <strong>Abakus</strong> | Adaptiert von den{' '}
+    <strong>Medimeisterschaften Graz</strong> |{' '}
     <a
       style={{
         textDecoration: 'none',

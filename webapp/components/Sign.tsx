@@ -62,7 +62,7 @@ const Sign = ({
       ariaHideApp={false}
     >
       <div className={styles.nav}>
-        <Typography variant="h6">Melde dich im Feld unten an</Typography>
+        <Typography variant="h6">Unterschreib im Feld unten</Typography>
         <IconButton size="medium" onClick={() => setIsOpen(false)}>
           <CloseIcon />
         </IconButton>
@@ -75,7 +75,7 @@ const Sign = ({
           marginBottom: '-5px',
         }}
       >
-        Tips: Vend telefonen
+        Tipp: Dreh das Smartphone
       </p>
       <SignatureCanvas
         penColor="black"
@@ -92,7 +92,7 @@ const Sign = ({
           Beginne von neuem
         </Button>
         <Button variant="contained" color="primary" onClick={base64Encode}>
-          Bruk
+          Unterschrift benutzen
         </Button>
       </div>
     </Modal>

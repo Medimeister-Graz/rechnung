@@ -50,7 +50,7 @@ const Form = (): JSX.Element => {
     <div className={styles.response}>
       {/* We have submitted the request, but gotten no response */}
       {submitting && <CircularProgress />}
-      {/* We have submitted the request, and gotten succes back */}
+      {/* We have submitted the request, and gotten success back */}
       {success == true && <Alert severity="success">{response}</Alert>}
       {/* We have submitted the request, and gotten failure back */}
       {success == false && <Alert severity="error">{response}</Alert>}
@@ -63,7 +63,7 @@ const Form = (): JSX.Element => {
         variant="h4"
         style={{ width: '100%', textAlign: 'center', marginBottom: '1em' }}
       >
-        Refusjonsskjema
+        Rechnungsformular
       </Typography>
       <Input
         name="Name"
@@ -97,7 +97,7 @@ const Form = (): JSX.Element => {
         name="Kontonummer"
         value={accountNumber}
         required
-        type="number"
+        type="string"
         updateForm={setAccountNumber}
         helperText="Das Konto an das die Erstattung überwiesen werden soll"
       />

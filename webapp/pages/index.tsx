@@ -16,7 +16,7 @@ const App = (): JSX.Element => (
     <CssBaseline />
     <Container maxWidth="sm" fixed>
       <img
-        src="/ntnui.svg"
+        src="/mmgraz.svg"
         alt="logo"
         width="100%"
         style={{ padding: '50px' }}

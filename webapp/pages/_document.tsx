@@ -24,7 +24,7 @@ class MyDocument extends Document {
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width"
           />
-          <link rel="icon" href="/ntnui.svg" />
+          <link rel="icon" href="/mmgraz.svg" />
         </Head>
         <body>
           <Main />
