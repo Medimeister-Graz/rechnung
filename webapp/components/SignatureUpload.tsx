@@ -37,7 +37,9 @@ const SignatureUpload = ({ updateForm, setSignature }: Props): JSX.Element => {
         />
         <div className={styles.fileLabel}>
           {hasUploaded ? (
-            <div className={styles.uploadedElement}>Signatur lastet opp</div>
+            <div className={styles.uploadedElement}>
+              Unterschrift hochgeladen
+            </div>
           ) : (
             <span>Unterschrift hochladen</span>
           )}
