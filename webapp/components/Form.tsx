@@ -94,7 +94,7 @@ const Form = (): JSX.Element => {
         helperText="kassierer@medimeistergraz.org'"
       />
       <Input
-        name="Kontonummer"
+        name="IBAN"
         value={accountNumber}
         required
         type="string"
