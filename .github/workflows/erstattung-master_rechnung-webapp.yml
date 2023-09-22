@@ -23,7 +23,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: mmgraz.azurecr.io{/${{ secrets.AzureAppService_ContainerUsername_d6de00fbee704307bebb4ab303ea33e4 }}/}rechnung:${{ github.sha }}
+        tags: mmgraz.azurecr.io${{ secrets.AzureAppService_ContainerUsername_d6de00fbee704307bebb4ab303ea33e4 }}rechnung:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -41,4 +41,4 @@ jobs:
         app-name: 'rechnung-webapp'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_8e5566903cbf49ffa40ad1decd84d018 }}
-        images: 'mmgraz.azurecr.io{/${{ secrets.AzureAppService_ContainerUsername_d6de00fbee704307bebb4ab303ea33e4 }}/}rechnung:${{ github.sha }}'
+        images: 'mmgraz.azurecr.io${{ secrets.AzureAppService_ContainerUsername_d6de00fbee704307bebb4ab303ea33e4 }}rechnung:${{ github.sha }}'
