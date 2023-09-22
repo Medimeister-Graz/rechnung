@@ -26,19 +26,19 @@ def service_account_login(mail_from, service_account_str):
 def create_mail(msg, body):
     msg[
         "Subject"
-    ] = f'Refusjonsskjema - {body.get("name", "")}'
+    ] = f'Rückerstattungsformular - {body.get("name", "")}'
 
     text = ""
-    text += f'Navn: {body.get("name", "")}\n'
-    text += f'E-post: {body.get("mailfrom", "")}\n'
-    text += f'Gruppe: {body.get("committee", "")}\n'
-    text += f'Kontonummer: {body.get("accountNumber", "")}\n'
-    text += f'Beløp: {body.get("amount", "")}\n'
-    text += f'Dato: {body.get("date", "")}\n'
-    text += f'Anledning/arrangement: {body.get("occasion", "")}\n'
+    text += f'Name: {body.get("name", "")}\n'
+    text += f'E-Mail: {body.get("mailfrom", "")}\n'
+    text += f'Referat: {body.get("committee", "")}\n'
+    text += f'IBAN: {body.get("accountNumber", "")}\n'
+    text += f'Summe: {body.get("amount", "")}\n'
+    text += f'Datum: {body.get("date", "")}\n'
+    text += f'Grund: {body.get("occasion", "")}\n'
     text += f'Kommentar: {body.get("comment", "")}\n'
     text += f'\n'
-    text += f"Refusjonsskjema er generert og vedlagt. Ved spørsmål ta kontakt med kasserer@ntnui.no!"
+    text += f"Das Rückerstattungsformular wurde erstellt und beigefügt. Bei Fragen wende dich an kassierer@medimeistergraz.org!"
 
     msg.attach(MIMEText(text))
 
@@ -50,13 +50,13 @@ def send_mail(mail_to, body, file):
     service_account_str = os.environ["SERVICE_ACCOUNT_STR"]
 
     msg = MIMEMultipart()
-    msg["From"] = formataddr(("NTNUI refusjon", mail_from))
+    msg["From"] = formataddr(("MMGRAZ Rückerstattung", mail_from))
     msg["To"] = COMMASPACE.join(mail_to)
     msg["Date"] = formatdate(localtime=True)
 
     create_mail(msg, body)
 
-    filename = body.get("date", "") + " Refusjonsskjema " + body.get("name", "") + ".pdf"
+    filename = body.get("date", "") + " Rückerstattungsformular " + body.get("name", "") + ".pdf"
     part = MIMEApplication(file, Name=filename)
     part["Content-Disposition"] = f'attachment; filename="{filename}"'
     msg.attach(part)

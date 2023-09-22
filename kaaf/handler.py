@@ -22,13 +22,13 @@ class UnsupportedFileException(Exception):
 
 
 field_title_map = {
-    "name": "Navn:",
-    "mailfrom": "E-post:",
-    "committee": "Gruppe/utvalg:",
-    "accountNumber": "Kontonummer:",
-    "amount": "Beløp:",
-    "date": "Dato:",
-    "occasion": "Anledning/arrangement:",
+    "name": "Name:",
+    "mailfrom": "E-Mail:",
+    "committee": "Referat:",
+    "accountNumber": "IBAN:",
+    "amount": "Summe:",
+    "date": "Datum:",
+    "occasion": "Grund:",
     "comment": "Kommentar:",
 }
 
@@ -53,7 +53,7 @@ class PDF(FPDF):
     def header(self):
         self.image("images/mmgraz.png", 10, 10, 33)
         self.set_font("Arial", "B", 15)
-        self.ln(20)
+        self.ln(40)
 
     def footer(self):
         self.set_y(-15)
@@ -142,7 +142,7 @@ def create_pdf(data):
     signature = data.pop("signature")
     images = data.pop("images")
 
-    pdf.cell(0, 14, "Refusjonsskjema", ln=1)
+    pdf.cell(0, 14, "Rückerstattungsformular", ln=1)
 
     pdf.set_font("Arial", "", 12)
     data["amount"] = data["amount"].replace(".", ",") # Format amount to Norwegian standard
@@ -153,11 +153,11 @@ def create_pdf(data):
         pdf.multi_cell(0, 8, txt=data[key])
 
     pdf.set_font("", "B")
-    pdf.cell(0, 20, txt="Signatur:", ln=1)
+    pdf.cell(0, 20, txt="Unterschrift:", ln=1)
     pdf.image(signature["file"].name, h=30, type=signature["type"])
     signature["file"].close()
     pdf.cell(0, 5, txt="", ln=1)
-    pdf.cell(0, 20, txt="Vedlegg:", ln=1)
+    pdf.cell(0, 20, txt="Anlage:", ln=1)
     max_img_width = 190
     max_img_height = 220
     for image in images:
@@ -193,7 +193,7 @@ def handle(data):
     except UnsupportedFileException as e:
         logging.error(f"Unsupported file type: {e}")
         return (
-            "En av filene som ble lastet opp er ikke i støttet format. Bruk PNG, JPEG, GIF, HEIC eller PDF",
+            "Eine von dir hochgeladene Datei hat kein unterstützes Format. Benutze PNG, JPEG, GIF, HEIC oder PDF",
             400,
         )
 
@@ -202,13 +202,13 @@ def handle(data):
         mail.send_mail([data["mailto"], data["mailfrom"]], data, file)
     except RuntimeError as e:
         logging.warning(f"Failed to generate pdf with exception: {e}")
-        return f"Klarte ikke å generere pdf: {e}", 500
+        return f"PDF konnte nicht generiert werden: {e}", 500
     except mail.MailConfigurationException as e:
         logging.warning(f"Failed to send mail: {e}")
-        return f"Klarte ikke å sende email: {e}", 500
+        return f"Mail konnte nicht gesendet werden: {e}", 500
     except Exception as e:
         logging.error(f"Failed with exception: {e}")
-        return f"Noe uventet skjedde: {e}", 400
+        return f"Etwas unerwartetes ist passiert: {e}", 400
 
     logging.info("Successfully generated pdf and sent mail")
-    return "Refusjonsskjema generert og sendt til kasserer!", 200
+    return "Rückerstattungsformular erstellt und an den Kassierer gesendet!", 200
