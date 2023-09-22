@@ -1,12 +1,12 @@
 {
-  "name": "skjema",
+  "name": "Formular",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "NTNUI skjema webapp",
-  "author": "NTNUI",
+  "description": "MMGRAZ Formular webapp",
+  "author": "MMGRAZ",
   "repository": {
     "type": "git",
-    "url": "github.com/NTNUI/skjema"
+    "url": "github.com/Medimeister-Graz/rechnung"
   },
   "scripts": {
     "dev": "next dev webapp",

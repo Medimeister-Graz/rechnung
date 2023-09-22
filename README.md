@@ -37,9 +37,9 @@ Where `signature.png` and `imageN.png` are paths to image files (the latter imag
 
 ## Environment variables
 
-| Variable        | Function                                     |
-| --------------- | -------------------------------------------- |
-| `MAIL_ADDRESS`  | Set the mail address for generated receipts |
-| `MAIL_PASSWORD` | Password for the mail account                |
-| `ENVIRONMENT`   | Set to "production" for sentry errors        |
-| `SENTRY_DSN`    | Ingest errors to sentry                      |
+| Variable              | Function                                    |
+| --------------------- | ------------------------------------------- |
+| `MAIL_ADDRESS`        | Set the mail address for generated receipts |
+| `SERVICE_ACCOUNT_STR` | Password for the mail account               |
+| `ENVIRONMENT`         | Set to "production" for sentry errors       |
+| `SENTRY_DSN`          | Ingest errors to sentry                     |
