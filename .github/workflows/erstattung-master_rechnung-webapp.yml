@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://mmgraz.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_16d87886213a4bd8aaaaf775298f78b2 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_72b35375195443fcb49aab01b55b661f }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_d6de00fbee704307bebb4ab303ea33e4 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_3a1a1889a59f47c4b05962c74dbf9bd6 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: mmgraz.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_16d87886213a4bd8aaaaf775298f78b2 }}/rechnung:${{ github.sha }}
+        tags: mmgraz.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d6de00fbee704307bebb4ab303ea33e4 }}/rechnung:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'rechnung-webapp'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1f7cf74c494243c685f9319a96859e2a }}
-        images: 'mmgraz.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_16d87886213a4bd8aaaaf775298f78b2 }}/rechnung:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_8e5566903cbf49ffa40ad1decd84d018 }}
+        images: 'mmgraz.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d6de00fbee704307bebb4ab303ea33e4 }}/rechnung:${{ github.sha }}'
