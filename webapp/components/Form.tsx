@@ -63,7 +63,7 @@ const Form = (): JSX.Element => {
         variant="h4"
         style={{ width: '100%', textAlign: 'center', marginBottom: '1em' }}
       >
-        Rechnungsformular
+        Rückerstattungsformular
       </Typography>
       <Input
         name="Name"
@@ -176,7 +176,7 @@ const Form = (): JSX.Element => {
         }}
       >
         <ReceiptIcon style={{ marginRight: '10px' }} />
-        <Typography variant="h6">Generiere Rechnung</Typography>
+        <Typography variant="h6">Generiere Rückerstattungsformular</Typography>
       </Button>
     </Paper>
   );
