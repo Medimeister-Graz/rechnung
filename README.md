@@ -1,5 +1,5 @@
 # Erstattungsformular Medimeister Graz
-
+[![Build passing](https://github.com/Medimeister-Graz/rechnung/actions/workflows/erstattung-master_rechnung-webapp.yml/badge.svg)](https://github.com/Medimeister-Graz/rechnung/actions/workflows/erstattung-master_rechnung-webapp.yml)
 Based on [webkom/kvittering](https://github.com/webkom/kvittering), configured to run as a normal docker container.
 
 Handles refund requests for [mmgraz](https://medimeistergraz.org).
