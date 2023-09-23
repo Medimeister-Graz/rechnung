@@ -40,7 +40,7 @@ ENV STATIC_DIRECTORY /app/static
 ENV mode="http"
 ENV cgi_headers="true"
 ENV upstream_url="http://127.0.0.1:5000"
-ENV exec_timeout="40s"
+ENV exec_timeout="120s"
 
 HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
 
