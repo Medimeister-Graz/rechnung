@@ -53,4 +53,4 @@ jobs:
         app-name: 'rechnung-webapp'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_8e5566903cbf49ffa40ad1decd84d018 }}
-        images: 'mmgraz.azurecr.io${{ secrets.REGISTRY_USERNAME }}rechnung:${{ github.sha }}'
+        images: '${{ secrets.REGISTRY_LOGIN_SERVER }}/rechnung:${{ github.sha }}'
