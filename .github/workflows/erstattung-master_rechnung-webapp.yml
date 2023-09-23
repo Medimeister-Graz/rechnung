@@ -1,5 +1,5 @@
 
-name: Build and deploy container app to Azure Web App
+name: Build and deploy
 
 on:
   push:
