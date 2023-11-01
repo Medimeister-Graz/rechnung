@@ -3,7 +3,7 @@ gevent
 fpdf
 black
 Pillow
-sentry-sdk[flask]==0.16.2
+sentry-sdk[flask]==1.33.1
 pdf2image
 pyheif
 google
