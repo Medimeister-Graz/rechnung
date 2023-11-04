@@ -4,7 +4,7 @@ name: Build and deploy
 on:
   push:
     branches:
-      - erstattung-master
+      - erstattung-main
   workflow_dispatch:
 
 jobs:
