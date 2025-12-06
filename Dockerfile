@@ -12,7 +12,7 @@ COPY ./kaaf/req.txt ./kaaf/req.txt
 
 RUN pip install --no-cache-dir -r kaaf/req.txt
 
-FROM node:16-alpine3.11 AS build-frontend
+FROM node:18-alpine3.11 AS build-frontend
 
 WORKDIR /build
 
