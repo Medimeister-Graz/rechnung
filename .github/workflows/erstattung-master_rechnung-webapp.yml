@@ -13,11 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
-    - name: 'Login via Azure CLI'
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     - name: Log in to registry
       uses: docker/login-action@v3
